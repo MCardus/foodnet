@@ -14,3 +14,6 @@ rm -fr get-pip.py
 
 # Ansible installation
 sudo pip install ansible
+
+# Export locale
+export LC_ALL=C
