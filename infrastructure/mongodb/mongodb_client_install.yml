@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: Install mongodb client
+    apt:
+      name: mongodb-clients
