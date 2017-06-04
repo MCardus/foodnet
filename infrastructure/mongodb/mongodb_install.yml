@@ -1,0 +1,31 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: Get MongoDB Key
+    apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=EA312927
+  
+  - name: Install MongoDB repository
+    copy:
+      content: "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse"
+      dest: "/etc/apt/sources.list.d/mongodb-org-3.2.list"
+    register: mongodb_repo
+  
+  - name: "Update chache"
+    apt:
+      update_cache: yes
+    when: mongodb_repo.changed
+  
+  - name: Install MongoDB
+    apt: name=mongodb-org allow_unauthenticated=yes
+  
+  - name: Add MongoDB Service
+    copy:
+      src: "mongodb.service"
+      dest: /etc/systemd/system/mongodb.service
+    become: yes
+  
+  - name: Enable and start MongoDB service
+    service: name=mongodb state=started enabled=yes
+    become: yes 
+
