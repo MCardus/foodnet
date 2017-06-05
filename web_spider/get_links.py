@@ -41,6 +41,7 @@ def get_links():
 
 
 if __name__ == "__main__":
+    """
     date = datetime.datetime.now()
     formated_date = "%s_%s_%s" % (date.day, date.month, date.year)
     logging.basicConfig(filename='../logs/get_links_'+formated_date+'.log',
@@ -49,4 +50,5 @@ if __name__ == "__main__":
                             datefmt='%H:%M:%S',
                             level=logging.DEBUG)
     #logging.info("Start get_links")
+    """
     get_links()
