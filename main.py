@@ -25,4 +25,6 @@ utils = utils.Init_instances(config_parser)
 mongodb = db_initiator.Db(config_parser, utils)
 
 # Web spider. Generating target links.
-web_spider.get_links(mongodb)
+#web_spider.get_links(mongodb)
+
+# Web Parser. Parsing each recipe link
