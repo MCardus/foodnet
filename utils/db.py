@@ -16,10 +16,10 @@ class Db(object):
             logging.exception('Error at saving data: '+body+" into collection: "+collection)
             return str(e)
 
-    def find(self,query=None,collection=None):
+    def find(self,query={},filter={},collection=None):
         ret = None
         try:
-            ret = self.db[collection].find(query)
+            ret = self.db[collection].find(query,filter)
         except Exception as e:
             logging.exception('Error at reading data using query: ' + query + " into collection: " + collection)
             ret = str(e)
