@@ -24,3 +24,11 @@ class Db(object):
         except Exception as e:
             logging.exception('Error at saving data: '+body+" into collection: "+collection)
             return str(e)
+
+    def find(self,query=None,collection=None):
+        try:
+            self.db[collection].find(query)
+        except Exception as e:
+            logging.exception('Error at reading data using query: ' + query + " into collection: " + collection)
+            return str(e)
+

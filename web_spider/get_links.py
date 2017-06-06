@@ -1,4 +1,4 @@
-# This file generates all target links. These links will be parsed afterwards.
+# This file generates all target links. These links are parsed afterwards.
 
 from lxml import html
 import logging

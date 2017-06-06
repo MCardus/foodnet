@@ -1,4 +1,5 @@
 import web_spider.get_links as web_spider
+import web_parser.get_recipes as web_parser
 import utils.init_instances as utils
 import utils.db as db_initiator
 import ConfigParser
@@ -25,4 +26,8 @@ utils = utils.Init_instances(config_parser)
 mongodb = db_initiator.Db(config_parser, utils)
 
 # Web spider. Generating target links.
-web_spider.get_links(mongodb)
+#web_spider.get_links(mongodb)
+
+# Web parser. Get recipes from web links.
+web_parser.get_recipes(mongodb)
+
