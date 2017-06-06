@@ -28,8 +28,5 @@ mongodb = db_initiator.Db(config_parser, utils)
 # Web spider. Generating target links.
 #web_spider.get_links(mongodb)
 
-# Web parser. Get recipes from web links.
-web_parser.get_recipes(mongodb)
-
 # Web Parser. Parsing each recipe link
 web_parser.get_recipes(mongodb)
