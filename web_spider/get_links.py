@@ -9,8 +9,7 @@ def get_links(mongodb):
     # Params
     web_parent = "https://cookpad.com/es/buscar/cocina%20tradicional%20espa%C3%B1ola?page="
     host="https://cookpad.com"
-    #total_parents = 200
-    total_parents = 3
+    total_parents = 200
     xpath_selector=".//ul[@class = 'recipe-list ']/li/a"
 
     # Parents generation
