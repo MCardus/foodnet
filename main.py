@@ -30,7 +30,7 @@ mongodb = db_initiator.Db(config_parser, utils)
 #web_spider.get_links(mongodb)
 
 # Web Parser. Parsing each recipe link
-web_parser.get_recipes(mongodb)
+#web_parser.get_recipes(mongodb)
 
 # Data cleaner. Clean data to extract ingredients from raw recipes
-#data_cleaner.recipes_clean(mongodb)
+data_cleaner.recipes_clean(mongodb)
