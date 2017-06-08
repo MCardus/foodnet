@@ -1,4 +1,5 @@
 SpanishName	EnglishName
+Aceite	Olive oil
 Aceite de algodón	Cotton oil
 Aceite de cacahuete	Peanut oil
 Aceite de coco	Coconut oil
@@ -157,6 +158,7 @@ Calamar	Squid
 Calamar	Squid
 Calamar	Squid
 Calamares en aceite vegetal	Squid in vegetable oil
+Caldo	Stock
 Caldo vegetal	Vegetable stock
 Callos de ternera	Tripe
 Camarón	Shrimp or common prawn
@@ -307,6 +309,7 @@ Guisante	Pea
 Guisantes en conserva	Pea
 Gusanito	Snack
 Haba	Broad bean
+Harina	Flour
 Harina de avena	Oat flour
 Harina de avena	Oat flour
 Harina de cebada	Barley flour
@@ -325,6 +328,7 @@ Higos y brevas	Figs
 Hinojo	Fennel
 Hojaldre	Puff pastry
 Horchata	Tigger nut milk drink
+Huevo	Egg
 Huevo de codorniz	Egg
 Huevo de gallina	Egg
 Huevo de gallina	Egg
@@ -339,13 +343,14 @@ Huevo de pato	Egg
 Huevo de pavo	Egg
 Infusión	Infusion
 Jalea real	Jelly
+Jamó	Ham
 Jamón asado	Ham
 Jamón cocido	Cooked ham
 Jamón cocido	Cooked ham
 Jamón ibérico de bellota	Iberian acorn-feed ham
 Jamón ibérico de cebo	Iberian ham of land cebo-feed
 Jamon serrano	Cured ham
-Jengibre Ginger
+Jengibre	Ginger
 Judía blanca	White bean
 Judía pinta	Pinto bean
 Judías blancas	White bean
@@ -529,27 +534,16 @@ Pastel con fruta confitada	Fruit cake
 Pastel de chocolate	Chocolate cake
 Pastel de manzana	Apple cake
 Patata	Potato
-Patata	Potato
-Patata	Potato
-Patata	Potato
-Patata	Potato
-Patata	Potato
 Patatas chips	Potato crips
 Patatas	Chips
 Pate de higado de cerdo	Pork liver pate
 Paté de pimienta	Pepper paté
 Pato	Duck
-Pato	Duck
 Pavo	Turkey
 Pavo	Turkey luncheon meat
-Pavo	Turkey
-Pavo	turkey
-Pavo	Turkey
 Pepinillos en vinagre	Pickled gherkin
 Pepino	Cucumber
 Pera	Pear
-Pera	Pear
-Perca	Perch
 Perca	Perch
 Percebe	 goose barnacle 
 Perdiz	Partridge
@@ -702,12 +696,13 @@ Repollo	Cabbage
 Requesón	Cottage cheese
 Riñón	Kidney
 Riñón	Kidney
-Rodaballo Turbot
+Rodaballo	Turbot
 Rollito de primavera	Chinese spring roll
 Romero	Rosemary
 Ron	Rum
 Rosquilla	Ring-shaped pastry
-Rúcula	Arugula
+Rúcula	Arugul
+Sal	Salt
 Salami	Salami
 Salchicha de pollo fresca	Fresh chicken sausage
 Salchicha	Sausage
@@ -804,6 +799,7 @@ Vainilla	Vanilla
 Vermut	Vermuth
 Vieira	Scallop
 Vieja	Parrot fish
+Vinagre	Vinegar
 Vinagre balsámico	Balsamic vinegar
 Vinagre de manzana	Apple vinegar
 Vinagre de vino	Wine vinegar

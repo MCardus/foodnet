@@ -34,8 +34,8 @@ def load_food_corpus(mongodb):
         for ingredient in food_corpus_cursor:
             logging.debug("Next corpus ingredient: "+str(ingredient))
             try:
-                spanish_name = ingredient["SpanishName"]
-                english_name = ingredient["EnglishName"]
+                spanish_name = ingredient["SpanishName"].lower()
+                english_name = ingredient["EnglishName"].lower()
             except:
                 logging.exception("Current ingredient "+str(ingredient)+" could not be loaded")
             food_corpus[spanish_name] = english_name
@@ -47,25 +47,60 @@ def load_food_corpus(mongodb):
     return food_corpus
 
 def parse_ingredients(ingredients_raw, food_corpus, mongodb):
+    # TODO - Improve function code quality
     ingredients_clean = list()
     for sentence in ingredients_raw:
         clean_ingredient = None
         logging.debug("Trying to parse sentence: "+sentence)
-        #TODO - Ingredients should be checked also in groups of two,three words like "orange juice"
-        for word in sentence.lower().split(" "):
-           if clean_ingredient == None:
-               if word in food_corpus:
-                   logging.debug("Ingredient found in present sentence: "+word)
-                   clean_ingredient = word
-	       elif word[:-1] in food_corpus:
-                   logging.debug("Ingredient found in present sentence: "+word[:-1])
- 	           clean_ingredient = word[:-1]
-               elif word+"s" in food_corpus:
-                   logging.debug("Ingredient found in present sentence: "+word+"s")
-	           clean_ingredient = word+"a"
-               if clean_ingredient != None: 
-                   logging.debug("Ingredient cleaned! "+word+" is "+clean_ingredient)
-                   ingredients_clean.append(clean_ingredient)
+        sentence_split = sentence.lower().split(" ")
+        # Check groups of works size = 3
+        for count in xrange(len(sentence_split)):
+            if clean_ingredient == None:
+                try:
+                    current_combination = sentence_split[count]+" "+sentence_split[count+1]+" "+sentence_split[count+2]
+                    if current_combination in food_corpus:
+                        logging.debug("Ingredient found in present sentence: "+current_combination)
+                        clean_ingredient = current_combination
+                    if clean_ingredient != None:
+                       logging.debug("Ingredient cleaned! "+current_combination+" is "+clean_ingredient)
+                       ingredients_clean.append(clean_ingredient)
+
+                except:
+                    pass
+	if clean_ingredient == None:
+	    # Check groups of works size = 2
+            for count in xrange(len(sentence_split)):
+                if clean_ingredient == None:
+                    try:
+                        current_combination = sentence_split[count]+" "+sentence_split[count+1]
+                        if current_combination in food_corpus:
+                            logging.debug("Ingredient found in present sentence: "+current_combination)
+                            clean_ingredient = current_combination
+                        if clean_ingredient != None:
+                           logging.debug("Ingredient cleaned! "+current_combination+" is "+clean_ingredient)
+                           ingredients_clean.append(clean_ingredient)
+
+                    except:
+                        pass
+            if clean_ingredient == None:
+                # Check groups of works size = 1
+                for word in sentence_split:
+                   if clean_ingredient == None:
+                       if word in food_corpus:
+                           logging.debug("Ingredient found in present sentence: "+word)
+                           clean_ingredient = word
+	               elif word[:-1] in food_corpus:
+                           logging.debug("Ingredient found in present sentence: "+word[:-1])
+ 	                   clean_ingredient = word[:-1]
+                       elif word+"s" in food_corpus:
+                           logging.debug("Ingredient found in present sentence: "+word+"s")
+                           clean_ingredient = word+"s"
+                       elif word+"es" in food_corpus:
+                           logging.debug("Ingredient found in present sentence: "+word+"es")
+	                   clean_ingredient = word+"es"
+                       if clean_ingredient != None: 
+                           logging.debug("Ingredient cleaned! "+word+" is "+clean_ingredient)
+                           ingredients_clean.append(clean_ingredient)
         if clean_ingredient == None:
             logging.debug("Present sentence "+sentence+" could not be parsed")
             try:
