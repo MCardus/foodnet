@@ -29,11 +29,15 @@ def load_food_corpus(mongodb):
     # Retrieving corpus data from mongodb
     logging.info("Recovering food coorpus from mongodb")
     try:
-        food_corpus_cursor = list(mongodb.find(filter={"_id": 0, "identificator": 0, "group": 0}, collection="food_corpus"))
+        food_corpus_cursor = list(mongodb.find(filter={"_id": 0}, collection="food_corpus"))
         food_corpus = dict()
         for ingredient in food_corpus_cursor:
-            spanish_name = ingredient["spanishName"]
-            english_name = ingredient["englishName"]
+            logging.debug("Next corpus ingredient: "+str(ingredient))
+            try:
+                spanish_name = ingredient["SpanishName"]
+                english_name = ingredient["EnglishName"]
+            except:
+                logging.exception("Current ingredient "+str(ingredient)+" could not be loaded")
             food_corpus[spanish_name] = english_name
         logging.info("Food corpus correctly loaded. Total loaded ingredients: "+str(len(food_corpus))+" Ingredients list:\n"+str(food_corpus))
         return food_corpus
