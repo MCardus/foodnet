@@ -20,7 +20,7 @@ def get_recipes(mongodb):
         for recipe_url in recipe_url_list["Web_links"][2:-2].split("', '"):
             logging.debug("Parsing recipe link: "+recipe_url)
             recipe = get_recipe(recipe_url)
-            mongodb.save(recipe,"raw_recipes")
+            mongodb.save(recipe,"raw_recipes_latin")
             logging.info("Recipe link: "+recipe_url+" parsed and saved")
 
 def get_recipe(recipe_link):
@@ -36,7 +36,7 @@ def get_recipe(recipe_link):
         logging.info("Recipe with title: "+recipe["title"])
         node_ingredients = tree.xpath(ingredients_xpath_selector)
         for ingredients_line in node_ingredients:
-            ingredient = ingredients_line.xpath("normalize-space(.)")
+            ingredient = ingredients_line.xpath("normalize-space(.)").encode('latin-1')
             logging.debug("Recipe contains raw ingredient: "+ingredient)
             ingredients.append(ingredient)
         recipe["ingredients"] = ingredients

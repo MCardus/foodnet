@@ -682,5 +682,6 @@
 { "_id" : { "$oid" : "52dfe66ae5653b4675aaaa5c" }, "identificator" : 2637, "spanishName" : "vieira", "englishName" : "scallop", "group" : "PescadoMariscoYDerivados" }
 { "_id" : { "$oid" : "52dfe66ae5653b4675aaaa5d" }, "identificator" : 845, "spanishName" : "vieira", "englishName" : "scallop", "group" : "PescadoMariscoYDerivados" }
 { "_id" : { "$oid" : "52dfe66ae5653b4675aaaa5e" }, "identificator" : 846, "spanishName" : "vieja", "englishName" : "parrot fish", "group" : "PescadoMariscoYDerivados" }
+{ "_id" : { "$oid" : "52dfe66ae5653b4675aaaa61" }, "identificator" : 2938, "spanishName" : "jamón", "englishName" :"ham", "group" : "CarnicosYDerivados" }
 { "_id" : { "$oid" : "52dfe66ae5653b4675aaaa5f" }, "identificator" : 847, "spanishName" : "volador", "englishName" : "flying fish", "group" : "PescadoMariscoYDerivados" }
 { "_id" : { "$oid" : "52dfe66ae5653b4675aaaa60" }, "identificator" : 2639, "spanishName" : "zamburiñas", "englishName" : "variegated scallop", "group" : "PescadoMariscoYDerivados" }
