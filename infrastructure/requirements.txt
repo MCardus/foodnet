@@ -11,7 +11,7 @@ html5lib==0.999
 idna==2.5
 ipaddress==1.0.18
 Jinja2==2.9.6
-lxml==3.5.0
+lxml==4.6.2
 MarkupSafe==1.0
 paramiko==2.1.2
 post==0.0.0
